@@ -1,5 +1,5 @@
 {
-  "name": "NodeExample-Gyroscope phone",
+  "name": "Node.js-Example",
   "description": "Control servo from phone gyroscope",
   "version": "0.0.1",
   "private": true,
