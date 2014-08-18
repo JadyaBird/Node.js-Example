@@ -1,11 +1,7 @@
-//http handles request and serving content
-var app = require ('http').createServer(handler)
-//helper used to parse requested urls
-,url = require('url')
-//filesystem helper to retrieve and read files
-,url = require('fs')
-
-//listen on port 5000
+var app = require('http').createServer(handler)
+  , url= require('url')
+  , fs = require('fs')
+  
 app.listen(5000);
 
 // Http handler function
@@ -28,9 +24,7 @@ function handler (req, res) {
                 res.end(data);
             });
     // Managing the route for the javascript files
-    } 
-
-    else if( /\.(js)$/.test(path) ) {
+    } else if( /\.(js)$/.test(path) ) {
         index = fs.readFile(__dirname+'/public'+path, 
             function(error,data) {
                 
