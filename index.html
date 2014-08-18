@@ -29,7 +29,7 @@
     var content = $('#content');
     var status  = $('#status');
        
-      var connection = new WebSocket('ws://'+document.domain+':1337');
+      var connection = new WebSocket('index://'+document.domain+':1337');
 
       connection.onopen = function () {
                            status.text('You are connected to ThanboPi Server.' +
