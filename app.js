@@ -49,6 +49,7 @@ websock.on('request', function(request) {
         // Turns the Servo to it's right
         if (Number(data)>2){        
             piblaster.setPwm(17, 0.9);
+			console.log(data);
 
         }
 
@@ -56,7 +57,9 @@ websock.on('request', function(request) {
         // Set GPIO pin 4 to a PWM of 6%
         // Turns the Servo to it's left
         if (Number(data)<(-2)){        
-            piblaster.setPwm(17, 0.05;
+            piblaster.setPwm(17, 0.05);
+console.log(data);
+
         }
 
         // If incoming data is > 2 send a signal to pin 17
@@ -64,6 +67,7 @@ websock.on('request', function(request) {
         // Turns the Servo to it's center position
         if (Number(data)==0){        
             piblaster.setPwm(17, 0.5);
+console.log(data);
         }
 
     });
@@ -71,10 +75,12 @@ websock.on('request', function(request) {
     connection.on('close', function (connection){
         //close connection
         piblaster.setPwm(17, 0);
+console.log(connection;
     });
 
     function closePin(){
         piblaster.setPwm(17, 0);
+
     }
 
 });
