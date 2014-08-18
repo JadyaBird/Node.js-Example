@@ -4,6 +4,7 @@ var server = require('http').createServer(app);
 var fs = require('fs');
 var WebSocketServer = require('websocket').server;
 var piblaster = require("pi-blaster.js");
+var pwmdriver = require('adafruit-i2c-pwm');
 
 
 var clients = [ ];
