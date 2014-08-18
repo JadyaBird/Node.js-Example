@@ -75,7 +75,7 @@ console.log(data);
     connection.on('close', function (connection){
         //close connection
         piblaster.setPwm(17, 0);
-console.log(connection;
+console.log(connection);
     });
 
     function closePin(){
