@@ -49,6 +49,7 @@ websock.on('request', function(request) {
         // Truns the Servo to it's right
         if (Number(data)>2){        
             piblaster.setPwm(4, 0.24);
+			echo "4=70" > /dev/pi-blaster
         }
 
         // If incoming data is > 2 send a signal to pin 17
@@ -56,6 +57,7 @@ websock.on('request', function(request) {
         // Truns the Servo to it's left
         if (Number(data)<(-2)){        
             piblaster.setPwm(4, 0.06);
+echo "4=110" > /dev/pi-blaster
         }
 
         // If incoming data is > 2 send a signal to pin 17
@@ -63,6 +65,7 @@ websock.on('request', function(request) {
         // Truns the Servo to it's center position
         if (Number(data)==0){        
             piblaster.setPwm(4, 0.15);
+echo "4=250" > /dev/pi-blaster
         }
 
     });
