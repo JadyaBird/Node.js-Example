@@ -1,13 +1,12 @@
 {
   "name": "Node.js-Example",
+  "description": "control servo from node server",
   "version": "0.0.1",
-  "description": "Raspberry Pi Servo Controller",
-  "main": "app.js",
+  "main":"app.js",
+  "private": true,
   "dependencies": {
-   "express": "3.x",
+    "express": "3.x",
    "websocket": "*",
    "pi-blaster": "*"
-	},
-
+  }
 }
-
