@@ -7,7 +7,7 @@
    "express": "3.x",
    "websocket": "*",
    "pi-blaster": "*"
-	}
+	},
 
 }
 
