@@ -4,7 +4,7 @@ var server = require('http').createServer(app);
 var fs = require('fs');
 var WebSocketServer = require('websocket').server;
 var piblaster = require("pi-blaster.js");
-var pwmdriver = require('adafruit-i2c-pwm');
+
 
 
 var clients = [ ];
@@ -76,7 +76,11 @@ websock.on('request', function(request) {
     connection.on('close', function (connection){
         //close connection
         piblaster.setPwm(17, 0);
+<<<<<<< HEAD
 		console.log("Connection:" + connection);
+=======
+		console.log("Connection: " + connection);
+>>>>>>> 021dcee241e9f214865b51b70ee0ecf05b82bace
     });
 
     function closePin(){
