@@ -76,7 +76,11 @@ websock.on('request', function(request) {
     connection.on('close', function (connection){
         //close connection
         piblaster.setPwm(17, 0);
+<<<<<<< HEAD
+		console.log("Connection:" + connection);
+=======
 		console.log("Connection: " + connection);
+>>>>>>> 021dcee241e9f214865b51b70ee0ecf05b82bace
     });
 
     function closePin(){
