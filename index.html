@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Servo Controller By Thanura(ThamboPi)</title>
+  
+<title>Servo Controller By Thanura(ThamboPi)</title>
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-</head>
-<body>
-
-  <div id="content"></div>
-
-  <div>
-     <span id="status">Connecting...</span>
+ 
+  <div id="content">
+</div>
+<div>
+   <span id="status">Connecting...</span>
   </div>
-  
 <script type="text/javascript">
    $(function () {
     // Position Variables
@@ -37,8 +32,9 @@
      'Move your device and Have Fun!!');
       };
 
-      connection.onerror = function (error) {
-        content.html($('<p>', { text: 'Sorry, but there\'s some problem with your '
+      connection.onerror = function (error) {content.html(
+                                          $('<p>
+', { text: 'Sorry, but there\'s some problem with your '
         + 'connection or the server is   down.' } ));  
       };
 
@@ -64,9 +60,6 @@
    
   });
  </script>
-
- </body>
- </html>
 
  
 

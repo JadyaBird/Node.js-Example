@@ -1,11 +1,13 @@
 {
   "name": "Node.js-Example",
-  "description": "Control servo from phone gyroscope",
   "version": "0.0.1",
-  "private": true,
+  "description": "Raspberry Pi Servo Controller",
+  "main": "app.js",
   "dependencies": {
-    "express": "*",
-    "websocket": "*",
-    "pi-blaster.js":"*"
-  }
+   "express": "3.x",
+   "websocket": "*",
+   "pi-blaster": "*"
+	}
+
 }
+

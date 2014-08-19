@@ -6,14 +6,13 @@ var WebSocketServer = require('websocket').server;
 var piblaster = require("pi-blaster.js");
 
 
-
 var clients = [ ];
 
 //Getting request from browser
 //and send response back
 app.get ('/', function(req, res){    
 
-      fs.readFile('index.html', 'utf8', function(err, text){
+      fs.readFile('ws.html', 'utf8', function(err, text){
             res.send(text);
         });
 });
@@ -46,29 +45,24 @@ websock.on('request', function(request) {
         data = data.slice(1,3);
 
         // If incoming data is > 2 send a signal to pin 17
-        // Set GPIO pin 4 to a PWM of 24%
-        // Turns the Servo to it's right
-        if (Number(data)>0){        
-            piblaster.setPwm(17, 0.9);
-			console.log("Data > 0" +data);
-
+        // Set GPIO pin 17 to a PWM of 24%
+        // Truns the Servo to it's right
+        if (Number(data)>2){        
+            piblaster.setPwm(17, 0.24);
         }
 
         // If incoming data is > 2 send a signal to pin 17
-        // Set GPIO pin 4 to a PWM of 6%
-        // Turns the Servo to it's left
-        if (Number(data)<(0)){        
-            piblaster.setPwm(17, 0.05);
-			console.log("Data < 0" + data);
-
+        // Set GPIO pin 17 to a PWM of 6%
+        // Truns the Servo to it's left
+        if (Number(data)<(-2)){        
+            piblaster.setPwm(17, 0.06);
         }
 
         // If incoming data is > 2 send a signal to pin 17
-        // Set GPIO pin 4 to a PWM of 15%
-        // Turns the Servo to it's center position
+        // Set GPIO pin 17 to a PWM of 15%
+        // Truns the Servo to it's center position
         if (Number(data)==0){        
-            piblaster.setPwm(17, 0.5);
-			console.log("data == 0" +data);
+            piblaster.setPwm(17, 0.15);
         }
 
     });
@@ -76,16 +70,10 @@ websock.on('request', function(request) {
     connection.on('close', function (connection){
         //close connection
         piblaster.setPwm(17, 0);
-<<<<<<< HEAD
-		console.log("Connection:" + connection);
-=======
-		console.log("Connection: " + connection);
->>>>>>> 021dcee241e9f214865b51b70ee0ecf05b82bace
     });
 
     function closePin(){
         piblaster.setPwm(17, 0);
-
     }
 
 });
